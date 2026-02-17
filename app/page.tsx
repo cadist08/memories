@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Camera, Star, Gift, Video } from 'lucide-react';
+// SESUAIKAN DENGAN NAMA REPO KAMU (Sama dengan basePath di atas)
+const BASE_PATH = "/memories"; 
 
 // --- KONFIGURASI DATA ---
 const DATA = {
@@ -11,10 +13,10 @@ const DATA = {
   startDate: "2024-02-14", 
   // Generate array berisi 19 nama file foto secara otomatis
   // Pastikan di folder public ada: foto1.jpg, foto2.jpg ... sampai foto19.jpg
-  gallery: Array.from({ length: 19 }, (_, i) => `/foto${i + 1}.jpeg`),
+  gallery: Array.from({ length: 19 }, (_, i) => `${BASE_PATH}/foto${i + 1}.jpeg`),
   
   // Masukkan nama file video kamu di sini (simpan di folder public)
-  video: "/video-kita.mp4", 
+  video: `${BASE_PATH}/video-kita.mp4`, 
   
   quiz: [
     { q: "Apa yang paling aku suka?", a: ["Nia", "Seblak", "Es Krim"], correct: 0 },
